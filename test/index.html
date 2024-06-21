@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="img" src="./Red-Beach-Ball-Transparent-PNG.png" width="100" />
+    <script>
+      let ball = document.getElementById("img");
+      ball.onmousedown = function (event) {
+        ball.style.position = "absolute";
+        ball.style.zIndex = 1000;
+
+        document.body.append(ball);
+
+        function moveAt(pageX, pageY) {
+          ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+          ball.style.top = pageY - ball.offsetHeight / 2 + "px";
+        }
+
+        moveAt(event.pageX, event.pageY);
+
+        function onMouseMove(event) {
+          moveAt(event.pageX, event.pageY);
+        }
+
+        // (2) move the ball on mousemove
+        document.addEventListener("mousemove", onMouseMove);
+
+        // (3) drop the ball, remove unneeded handlers
+        ball.onmouseup = function () {
+          document.removeEventListener("mousemove", onMouseMove);
+          ball.onmouseup = null;
+        };
+      };
+      ball.ondragstart = function () {
+        return false;
+      };
+      console.log("working on the parents");
+    </script>
+  </body>
+</html>

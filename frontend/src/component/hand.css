@@ -1,0 +1,92 @@
+/* :root {
+  --random1: 10%;
+  --random2: 0%;
+  --random3: 0%;
+  --random4: 0%;
+  --random5: 50%;
+  --random6: 0%;
+} */
+
+.main-left {
+  position: absolute;
+  width: 50%;
+  top: -20%;
+  animation: left-side-animation 12s ease-in-out infinite forwards;
+}
+
+.main-right {
+  position: absolute;
+  width: 50%;
+  top: -20%;
+  animation: right-side-animation 12s ease-in-out infinite forwards;
+}
+
+@keyframes left-side-animation {
+  0% {
+    top: -20%;
+    left: var(--random1);
+  }
+  10% {
+    left: var(--random4);
+  }
+  20% {
+    left: var(--random2);
+  }
+  30% {
+    left: var(--random1);
+  }
+  40% {
+    left: var(--random3);
+  }
+  50% {
+    left: var(--random4);
+  }
+  60% {
+    left: var(--random2);
+  }
+  70% {
+    left: var(--random3);
+  }
+  80% {
+    left: var(--random5);
+  }
+  100% {
+    top: 100%;
+    left: var(--random6);
+  }
+}
+
+@keyframes right-side-animation {
+  0% {
+    top: -20%;
+    right: var(--random5);
+  }
+  10% {
+    right: var(--random2);
+  }
+  20% {
+    right: var(--random1);
+  }
+  30% {
+    right: var(--random6);
+  }
+  40% {
+    right: var(--random4);
+  }
+  50% {
+    right: var(--random3);
+  }
+  60% {
+    right: var(--random5);
+  }
+  70% {
+    right: var(--random1);
+  }
+  80% {
+    right: var(--random4);
+  }
+  100% {
+    top: 100%;
+    right: var(--random6);
+  }
+}
